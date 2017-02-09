@@ -183,6 +183,6 @@ a.gal_jsonkeytext {
     font-size: 80%;
 }
 
-.galogin-powered p {
+p.galogin-powered {
     display: none!important;
 }
