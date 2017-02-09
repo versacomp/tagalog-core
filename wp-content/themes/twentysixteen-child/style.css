@@ -1,0 +1,16 @@
+/*
+Theme Name: Twentysixteen Child
+Description: A theme for language learners
+Template: twentysixteen
+Version: 1.0.0
+Author: Mitch Lipayon
+Text Domain: twentysixteen-child
+*/
+
+#wpoa-login-google {
+    visibility: hidden!important;
+}
+
+#wpoa-title {
+    visibility: hidden!important;
+}
