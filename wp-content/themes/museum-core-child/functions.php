@@ -21,30 +21,11 @@ function v_forcelogin() {
 add_action('init', 'v_forcelogin');
 
 
+function annointed_admin_bar_remove() {
+	global $wp_admin_bar;
 
-/* Remove the "Dashboard" from the admin menu for non-admin users */
-function wpse52752_remove_dashboard () {
-	global $current_user, $menu, $submenu;
-	get_currentuserinfo();
-
-	if( ! in_array( 'administrator', $current_user->roles ) ) {
-		reset( $menu );
-		$page = key( $menu );
-		while( ( __( 'Dashboard' ) != $menu[$page][0] ) && next( $menu ) ) {
-			$page = key( $menu );
-		}
-		if( __( 'Dashboard' ) == $menu[$page][0] ) {
-			unset( $menu[$page] );
-		}
-		reset($menu);
-		$page = key($menu);
-		while ( ! $current_user->has_cap( $menu[$page][1] ) && next( $menu ) ) {
-			$page = key( $menu );
-		}
-		if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) &&
-		     ( 'index.php' != $menu[$page][2] ) ) {
-			wp_redirect( get_option( 'siteurl' ) . '/wp-admin/edit.php');
-		}
-	}
+	/* Remove their stuff */
+	$wp_admin_bar->remove_menu('wp-logo');
 }
-add_action('admin_menu', 'wpse52752_remove_dashboard');
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+
