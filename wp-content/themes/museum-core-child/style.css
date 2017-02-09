@@ -6,3 +6,7 @@ Version: 1.0.0
 Author: Mitch Lipayon
 Text Domain: museum-core-child
 */
+
+.wpoa-login-form {
+    display: none;
+}
