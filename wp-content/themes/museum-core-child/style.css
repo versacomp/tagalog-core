@@ -7,6 +7,10 @@ Author: Mitch Lipayon
 Text Domain: museum-core-child
 */
 
-a .wpoa-login-button {
-    display: none;
+.wpoa-layout-buttons-column a {
+    visibility: hidden;
+}
+
+#wpoa-title {
+    visibility: hidden;
 }
