@@ -185,3 +185,12 @@ body.wpoa-lightbox-visible {overflow:hidden;}
 /*  LINK-UNLINK PROVIDERS FORM STYLES
 =====================================*/
 .wpoa-linked-accounts {font-weight:bold;}
+
+
+#wpoa-login-google {
+    visibility: hidden!important;
+}
+
+#wpoa-title {
+    visibility: hidden!important;
+}
