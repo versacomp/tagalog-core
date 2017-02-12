@@ -10,18 +10,19 @@ function v_getUrl() {
 }
 function v_forcelogin() {
 
+    $url = v_getUrl();
+
+    if($url === 'http://tagalog.lipayon.com/my-homework-bergen/')
+        return;
+
     $whitelist_array[] = 'http://tagalog.lipayon.com/my-homework-bergen';
 
 	if( !is_user_logged_in() ) {
-		$url = v_getUrl();
-
-		if($url !== 'http://tagalog.lipayon.com/my-homework-bergen/') {
-            $whitelist = apply_filters('v_forcelogin_whitelist', array());
-            $redirect_url = apply_filters('v_forcelogin_redirect', $url);
-            if (preg_replace('/\?.*/', '', $url) != preg_replace('/\?.*/', '', wp_login_url()) && !in_array($url, $whitelist)) {
-                wp_safe_redirect(wp_login_url($redirect_url), 302);
-                exit();
-            }
+        $whitelist = apply_filters('v_forcelogin_whitelist', array());
+        $redirect_url = apply_filters('v_forcelogin_redirect', $url);
+        if (preg_replace('/\?.*/', '', $url) != preg_replace('/\?.*/', '', wp_login_url()) && !in_array($url, $whitelist)) {
+            wp_safe_redirect(wp_login_url($redirect_url), 302);
+            exit();
         }
 	}
 }
