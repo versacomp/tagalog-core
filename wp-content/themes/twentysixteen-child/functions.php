@@ -12,7 +12,7 @@ function v_forcelogin() {
 
     $url = v_getUrl();
 
-    if($url === 'http://tagalog.lipayon.com/my-homework-bergen/')
+    if(strpos($_SERVER['REQUEST_URI'], 'my-homework-bergen') !== false)
         return;
 
     $whitelist_array[] = 'http://tagalog.lipayon.com/my-homework-bergen';
