@@ -9,10 +9,13 @@ function v_getUrl() {
 	return $url;
 }
 function v_forcelogin() {
+
     $whitelist_array[] = 'http://tagalog.lipayon.com/my-homework-bergen';
 
 	if( !is_user_logged_in() ) {
 		$url = v_getUrl();
+
+        echo "url: " . $url;
 
 		if(!in_array($url, $whitelist_array)) {
             $whitelist = apply_filters('v_forcelogin_whitelist', array());
