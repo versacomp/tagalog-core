@@ -23,7 +23,7 @@ $my_posts = get_posts($args);
     <?php $ap_core_content = ap_core_get_which_content(); ?>
     <div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
 
-        <?php echo "<h4>" . $my_posts[0]->post_title . "</h4><br /><hr />"; ?>
+        <?php echo "<h4>" . $my_posts[0]->post_title . "</h4>"; ?>
         <?php echo $my_posts[0]->post_content; ?>
 
     </div>
