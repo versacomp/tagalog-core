@@ -39,6 +39,6 @@ $my_posts = get_posts($args);
 
 <?php endif?>
 
-echo "<br /><br /><br />";
+<?php echo "<br /><br /><br />"; ?>
 
 <?php get_footer(); ?>
