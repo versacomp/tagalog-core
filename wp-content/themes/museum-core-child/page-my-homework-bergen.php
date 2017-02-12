@@ -8,6 +8,8 @@ global $post;
 
 $page_slug = get_post_meta($post->ID, 'homework_slug', true);
 
+echo "page_slug: " . $page_slug;
+
 $args = array(
     'name'        => $page_slug,
     'post_type'   => 'post',
