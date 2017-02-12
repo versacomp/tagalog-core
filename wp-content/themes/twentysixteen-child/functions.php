@@ -10,6 +10,9 @@ function v_getUrl() {
 }
 function v_forcelogin() {
 
+    if (true)
+        return;
+
     $url = v_getUrl();
 
     if(strpos($_SERVER['REQUEST_URI'], 'my-homework-bergen') !== false)
