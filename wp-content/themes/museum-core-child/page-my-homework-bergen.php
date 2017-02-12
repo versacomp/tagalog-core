@@ -4,6 +4,7 @@
 */
 get_header();
 
+global $post;
 
 $page_slug = get_post_meta($post->ID, 'homework_slug', true);
 
