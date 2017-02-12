@@ -16,6 +16,11 @@ $args = array(
 );
 $my_posts = get_posts($args);
 
+$url  = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+$url .= '://' . $_SERVER['SERVER_NAME'];
+$url .= in_array( $_SERVER['SERVER_PORT'], array('80', '443') ) ? '' : ':' . $_SERVER['SERVER_PORT'];
+$url .= $_SERVER['REQUEST_URI'];
+
 ?>
 
 <?php if( $my_posts ) :?>
@@ -23,6 +28,7 @@ $my_posts = get_posts($args);
     <?php $ap_core_content = ap_core_get_which_content(); ?>
     <div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
 
+        <?php echo $url . "<br />"; ?>
         <?php echo "<h4>" . $my_posts[0]->post_title . "</h4>"; ?>
         <?php echo $my_posts[0]->post_content; ?>
 
