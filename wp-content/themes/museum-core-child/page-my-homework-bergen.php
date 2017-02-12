@@ -30,7 +30,7 @@ $my_posts = get_posts($args);
 
 <?php else: ?>
 
-    $ap_core_content = ap_core_get_which_content(); ?>
+    <?php $ap_core_content = ap_core_get_which_content(); ?>
     <div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
 
         <?php echo "No homework found. :("; ?>
