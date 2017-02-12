@@ -15,7 +15,7 @@ function v_forcelogin() {
 	if( !is_user_logged_in() ) {
 		$url = v_getUrl();
 
-		if($url !== 'http://tagalog.lipayon.com/my-homework-bergen') {
+		if($url !== 'http://tagalog.lipayon.com/my-homework-bergen/') {
             $whitelist = apply_filters('v_forcelogin_whitelist', array());
             $redirect_url = apply_filters('v_forcelogin_redirect', $url);
             if (preg_replace('/\?.*/', '', $url) != preg_replace('/\?.*/', '', wp_login_url()) && !in_array($url, $whitelist)) {
